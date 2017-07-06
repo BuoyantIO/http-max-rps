@@ -11,7 +11,7 @@ Scalability Law.
 
 | Flag                 | Default                 | Description |
 |----------------------|-------------------------|-------------|
-|`-address`            | `http://localhost:4140` | URL of http server or intermediary |
+| `-address`           | `http://localhost:4140` | URL of http server or intermediary |
 | `-concurrencyLevels` | `1,5,10,20,30`          | levels of concurrency to test with |
 | `-debug`             | `false`                 | print out some extra information for debugging |
 | `-host`              | `<none>`                | value of Host header to set |

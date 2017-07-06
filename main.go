@@ -18,7 +18,7 @@ import (
 	"sync"
 	"time"
 
-	"gonum.org/v1/gonum/matrix/mat64"
+	"gonum.org/v1/gonum/mat"
 	"gonum.org/v1/gonum/optimize"
 )
 
@@ -31,9 +31,9 @@ import (
 func main() {
 	var (
 		address           = flag.String("address", "http://localhost:4140", "URL of http server or intermediary")
-		host 			  = flag.String("host", "", "value of Host header to set")
+		host              = flag.String("host", "", "value of Host header to set")
 		concurrencyLevels = flag.String("concurrencyLevels", "1,5,10,20,30", "levels of concurrency to test with")
-		timePerLevel      = flag.Duration("timePerLevel", 1 * time.Second, "how much time to spend testing each concurrency level")
+		timePerLevel      = flag.Duration("timePerLevel", 1*time.Second, "how much time to spend testing each concurrency level")
 		debug             = flag.Bool("debug", false, "print out some extra information for debugging")
 	)
 
@@ -65,9 +65,9 @@ func main() {
 		denseLatency = append(denseLatency, float64(throughput))
 	}
 
-	latency := mat64.NewDense(len(denseLatency) / 2, 2, denseLatency)
-	concurrency := mat64.Col(nil, 0, latency)
-	throughput := mat64.Col(nil, 1, latency)
+	latency := mat.NewDense(len(denseLatency)/2, 2, denseLatency)
+	concurrency := mat.Col(nil, 0, latency)
+	throughput := mat.Col(nil, 1, latency)
 
 	// `f` and `grad` were borrowed from https://play.golang.org/p/wWUH4E5LhP
 	f := func(x []float64) float64 {
@@ -140,7 +140,7 @@ func exUsage(msg string, args ...interface{}) {
 }
 
 func throughputAtConcurrency(n, kappa, lambda, sigma float64) float64 {
-    return (lambda * n) / (1 + (sigma * (n - 1)) + (kappa * n * (n - 1)));
+	return (lambda * n) / (1 + (sigma * (n - 1)) + (kappa * n * (n - 1)))
 }
 
 // These math functions were borrowed from https://play.golang.org/p/wWUH4E5LhP
@@ -170,13 +170,13 @@ func concurrencyToThroughputDeriv(concurrency, sigma, kappa, lambda float64) (dS
 
 // Converts a slice of chan int to a slice of int.
 func chansToSlice(cs []<-chan int, size int) []int {
-    s := make([]int, size)
+	s := make([]int, size)
 	for i, c := range cs {
 		for m := range c {
 			s[i] = m
-	    }
+		}
 	}
-    return s
+	return s
 }
 
 func newClient(
@@ -199,7 +199,7 @@ func newClient(
 		tr.TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	}
 	return &http.Client{
-		Timeout: 10 * time.Second,
+		Timeout:   10 * time.Second,
 		Transport: &tr,
 	}
 }
@@ -232,7 +232,7 @@ func sendRequest(
 }
 
 // Runs a single load test, returns how many requests were sent in a second.
-func runLoadTest(client *http.Client, destURL *url.URL, host *string, wg *sync.WaitGroup, startWg *sync.WaitGroup, timePerLevel *time.Duration) <- chan int {
+func runLoadTest(client *http.Client, destURL *url.URL, host *string, wg *sync.WaitGroup, startWg *sync.WaitGroup, timePerLevel *time.Duration) <-chan int {
 	out := make(chan int, 1)
 	bodyBuffer := make([]byte, 50000)
 
