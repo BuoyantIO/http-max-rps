@@ -1,0 +1,90 @@
+{
+	"ImportPath": "github.com/buoyantio/http-max-rps",
+	"GoVersion": "go1.8",
+	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "golang.org/x/tools/container/intsets",
+			"Rev": "f2cd9d3b518cfa0e287637dd02a895ce2b587f14"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/blas",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/blas/blas64",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/blas/gonum",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/blas/gonum/internal/math32",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/floats",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/internal/asm/f32",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/internal/asm/f64",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/lapack",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/lapack/gonum",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/lapack/lapack64",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/mat",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/mathext",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/mathext/internal/amos",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/mathext/internal/cephes",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/mathext/internal/gonum",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/optimize",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/stat",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/stat/distmv",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		},
+		{
+			"ImportPath": "gonum.org/v1/gonum/stat/distuv",
+			"Rev": "e1b3c5334d9b63c8307d6f6c77b202ff8b5c8b69"
+		}
+	]
+}
