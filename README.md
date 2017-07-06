@@ -1,6 +1,6 @@
 # http-max-rps
 
-A tool for finding the max RPS of an HTTP 
+A tool for finding the max RPS of an HTTP server or intermediary.
 
 `http-max-rps` will tell you the maximum rps that either an http server
 or an intermediary can provide as well as the max number of concurrent
